@@ -1,0 +1,108 @@
+.container-books {
+    margin-top: 30px;
+   display: flex;
+   flex-wrap: wrap;
+   width: 50vw;
+   gap: 2em;
+   margin-left: 30%;
+}
+.container-books div {
+    flex: 0 1 auto;
+}
+form>*{
+    margin-top: 1em;
+}
+.send_data {
+    padding: 5px;
+    font-size: 1rem;
+    background-color: green;
+    color: whitesmoke;
+    height: 35px;
+    width: 65px;
+    border-radius: 8px;
+}
+.navbar {
+    display: flex;
+    height: 10vh;
+    width: 100vw;
+    background-color: black;
+    color: white;
+}
+.header-library {
+    margin: auto;
+    font-family:  "Dancing Script", cursive;
+    margin-top: 20px;
+    font-size: 1.8rem;
+    letter-spacing: 4px;
+}
+body {
+    margin: 0px;
+}
+.cancel {
+    height: 35px;
+    width: 65px;
+    background-color: red;
+    color: white;
+    font-size: 1em;
+    margin-right: 8px;
+    border-radius: 8px;
+}
+input {
+    padding: 0.5em;
+}
+input:focus {
+    outline: none;
+    border-color: blue;
+    border-radius: 8px;
+}
+.book-items {
+    font-size: 20px;
+    border: 2px solid black;
+    background-color: #e4e4e7;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 250px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow: hidden;
+    padding: 8px;
+    box-shadow: 8px 4px 4px 0px #454545;
+    border-radius: 8px;
+}
+button.open {
+    margin-left: 40%;
+    margin-top: 1.3em;
+    padding: 7px;
+    border-radius: 0.4em;
+    border: 2px solid white;
+    background-color: white;
+    font-size: 1.2em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+button.open:hover{
+    transition: 0.2s;
+    background-color: #454545;
+    color: white;
+}
+.navbar~*{
+    background-color: white;
+}
+.read-check,.remove-book {
+    width: 70%;
+    border-radius: 8px;
+    font-size: 100%;
+    font-family: 'Times New Roman', Times, serif;
+    height: 2em;
+    margin-left: 15%;
+}
+.remove-book {
+    color: black;
+}
+.book-name,.book-author,.book-page {
+    margin-left: 20%;
+}
+.read-check {
+    margin-top: 15px;
+}

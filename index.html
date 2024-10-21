@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="header-library">Library</div>
+    </div>
+    <button class="open"><span style="font-weight: bolder;">+</span>Add Book</button>
+    <dialog class="open">
+        <h4>Add a Book</h4>
+        <form action="book-form" method="dialog">
+            <label for="name"></label>
+            <input type="text" name="name" id="name" placeholder="Name" required><br>
+            <label for="author"></label>
+            <input type="text" name="author" id="author" placeholder="Author" required><br>
+            <label for="page"></label>
+            <input type="number" name="page" id="page" placeholder="No.of.pages" min="0" required><br>
+            <label for="book">Have you read it</label>
+            <input type="radio" name="book" value="yes"><span>Yes</span>
+            <input type="radio" name="book" value="no" ><span>No</span>
+            <br>
+            <button class="cancel">Cancel</button>
+            <button type="submit" class="send_data">Submit</button>
+        </form>
+    </dialog>
+    <div class="container-books">
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

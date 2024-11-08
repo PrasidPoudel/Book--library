@@ -6,25 +6,29 @@ btnopen.addEventListener('click', () => {
 })
 const close = document.querySelector('.cancel')
 close.addEventListener('click', () => {
+    removeinputs()
     popup.close()
 })
 let myLibrary = [];
 //Get Radio buttons
 const radio_buttons = document.querySelectorAll('input[name="book"]')
 //Get title author and page of book
-function Book(title, author, page, index, radio_buttons) {
-    this.index = index
-    this.title = title;
-    this.author = author;
-    this.page = page;
-    this.radio_buttons = function () {
+class Book {
+
+    constructor(title, author, page, index, radio_buttons) {
+        this.index = index
+        this.title = title;
+        this.author = author;
+        this.page = page;
+    }
+    
+    radio_buttons() {
         for (const radioButton of radio_buttons) {
             if (radioButton.checked) {
                 return 'Read';
             }
             return 'Not read'
         }
-
     }
 }
 //Bookmark here
@@ -33,13 +37,13 @@ let pos = 0, counter = 0;
 //This Function add elements and other stuffs like pushing in array
 function addBookToLibrary(event) {
     event.preventDefault()
-    let obj={}
+    let obj = {}
     let title = document.getElementById('name').value;
     let author = document.getElementById('author').value;
     let page = document.getElementById('page').value;
-    if(title!=="" && author!=="" && page!=="") {
-    obj = new Book(title, author, page, counter, radio_buttons);
-    myLibrary.push(obj)
+    if (title !== "" && author !== "" && page !== "") {
+        obj = new Book(title, author, page, counter, radio_buttons);
+        myLibrary.push(obj)
     }
     const grid = document.querySelector('.container-books')
     let name = document.createElement('div')
@@ -77,19 +81,22 @@ function removeinputs() {
     inputs.forEach((input) => {
         input.value = ''
     })
+    radio_buttons.forEach((button) => {
+        button.checked = false
+    })
 }
 //Toggle Button Read or Not Status
 function toogle_read(button) {
-    if (button.textContent === 'Read')   button.style.backgroundColor='lightgreen'
-    else   button.style.backgroundColor='#FFCCCB'
+    if (button.textContent === 'Read') button.style.backgroundColor = 'lightgreen'
+    else button.style.backgroundColor = '#FFCCCB'
     button.addEventListener('click', () => {
         if (button.textContent === 'Read') {
             button.textContent = 'Not read'
-            button.style.backgroundColor='#FFCCCB'
+            button.style.backgroundColor = '#FFCCCB'
         }
         else if (button.textContent === 'Not read') {
             button.textContent = 'Read'
-            button.style.backgroundColor='lightgreen'
+            button.style.backgroundColor = 'lightgreen'
         }
     })
 }
@@ -107,7 +114,7 @@ function removebooks() {
         button.addEventListener('click', () => {
             let book_index = Number(button.getAttribute('position'))
             let parent = document.querySelector(`.book-items[position="${book_index}"]`);
-            myLibrary.splice(book_index,1)
+            myLibrary.splice(book_index, 1)
             parent.remove()
         })
     })

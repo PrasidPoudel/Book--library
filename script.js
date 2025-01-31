@@ -73,8 +73,8 @@ function addBookToLibrary(event) {
     removebooks();
 }
 //When Clicked on Submit Add all the details of book to library
-const submit = document.querySelector('.send_data')
-submit.addEventListener('click', addBookToLibrary)
+const submit = document.querySelector('form')
+submit.addEventListener('submit', addBookToLibrary)
 //Clear all the inputs of form
 function removeinputs() {
     const inputs = document.querySelectorAll('input')

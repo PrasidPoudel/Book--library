@@ -18,15 +18,15 @@
     <button class="open"><span style="font-weight: bolder;">+</span>Add Book</button>
     <dialog class="open">
         <h4>Add a Book</h4>
-        <form action="book-form" method="dialog">
+        <form method="dialog">
             <label for="name"></label>
-            <input type="text" name="name" id="name" placeholder="Name" required><br>
+            <input type="text" name="name" id="name" placeholder="Name" minlength="3" required><br>
             <label for="author"></label>
-            <input type="text" name="author" id="author" placeholder="Author" required><br>
+            <input type="text" name="author" id="author" placeholder="Author" minlength="5" required pattern="a-z|A-Z" ><br>
             <label for="page"></label>
             <input type="number" name="page" id="page" placeholder="No.of.pages" min="0" required><br>
             <label for="book">Have you read it</label>
-            <input type="radio" name="book" value="yes"><span>Yes</span>
+            <input type="radio" name="book" value="yes" required><span>Yes</span>
             <input type="radio" name="book" value="no" ><span>No</span>
             <br>
             <button class="cancel">Cancel</button>
